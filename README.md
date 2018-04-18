@@ -24,6 +24,17 @@ from service_discovery import AddService
 AddService.check_availability()
 
 #create a new service definition:
+serv = {
+    'name' : 'WaterServer',
+    'addr' : '192.168.43.190',
+    'description' : "Demo server",
+    'port' : 5000
+}
+#register the service:
+AddService.add_service(serv)
+
+#remove method:
+AddService.remove_service(serv)
 ```
 
 
