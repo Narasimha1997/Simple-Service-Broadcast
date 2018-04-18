@@ -14,5 +14,17 @@ call <strong>check_availability()</strong> to make sure the file exists, else a 
 
 <strong>add_service()</strong> will add a new service entry.
 
+<h3> Registering a new service using AddService API </h3>
+
+``` 
+from service_discovery import AddService
+#import AddService API
+
+#you have to always call this function to make sure service.txt is present
+AddService.check_availability()
+
+#create a new service definition:
+```
+
 
 
