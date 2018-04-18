@@ -42,15 +42,19 @@ class EventLoop(Thread):
         self.timeinterval = timeinterval
         self.b_socket = b_socket
         self.addr = addr
-    
-    def run(self):
-        while True: 
-            with open(path, 'r') as reader:
+       
+    def process_broadcast_data(self):
+        with open(path, 'r') as reader:
                 self.broadcast_data = reader.readlines()
                 self.broadcast_data = set(self.broadcast_data)
             data = ""
             for line in self.broadcast_data:
                 data+=line
+            return data
+    
+    def run(self):
+        while True:
+            data = self.process_broadcast_data()
             self.b_socket.sendto(bytes(data.encode('utf-8')), self.addr)
         
             #callback demo, implement any funcition here
