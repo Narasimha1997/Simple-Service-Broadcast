@@ -37,5 +37,9 @@ AddService.add_service(serv)
 AddService.remove_service(serv)
 ```
 
+Now you can run server.py to broadcast service file.
+
+<strong>You can configure server.py to run on startup on POSIX machines, so services will always be broadcasted and new services can be added and removed by API in parallel.</strong>
+
 
 
