@@ -41,5 +41,8 @@ Now you can run server.py to broadcast service file.
 
 <strong>You can configure server.py to run on startup on POSIX machines, so services will always be broadcasted and new services can be added and removed by API in parallel.</strong>
 
+<h3>Implementing your own broadcast formats:</h3>
+
+EventLoop thread of server.py implements a procedure called process_broadcast_data() which reads data from service.txt file, you can implement your own procedures to create different broadcast formats.
 
 
